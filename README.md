@@ -1,7 +1,7 @@
 # Cardano DID method (Draft)
 
 ## Introduction
-Cardano is a public blockchain platform. It is open-source and decentralized, with consensus achieved using proof of stake. It can facilitate peer-to-peer transactions with its internal cryptocurrency, Ada. Cardano DID method is a proposed implementation of DID for the Cardano Blockchain and provides a concrete specification for Cardano-specific DID. This method is valid for both the Cardano mainnet and testnet.
+Cardano is a public blockchain platform. It is open-source and decentralized, with consensus achieved using proof of stake. It can facilitate peer-to-peer transactions with its internal cryptocurrency, Ada. Cardano DID method is a proposed implementation of Decentralised ID (DID) for the Cardano Blockchain and provides a concrete specification for Cardano-specific DID. This method is valid for both the Cardano mainnet and testnet.
 
 ## Cardano DID Scheme
 The ABNF notation for DIDs used in the Cardano DID method is as follows:
@@ -76,26 +76,32 @@ In order to register a Cardano DID, the account must transmit a transaction on t
 {
   "931": {
     "target": "did:cardano:vKeyHash",
-    "document": {
-      "@context": "https://www.w3.org/ns/did/v1",
-      "id": "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7",
-      "controller": "did:cardano:vKeyHash"
-      "verificationMethod": [{
-        "id": "did:cardano:vkeyHash",
-        "type": "Ed25519VerificationKey2018",
-        "controller": "did:cardano:vkeyHash",
-        "publicKeyHex": "CBORHex"
-      }],
-      "authentication": [
-        "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
-      ],
-      "assertionMethod": [
-        "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
-      ]
-    }
+    "document": "ipfs://<ipfsHash>"
   }
 }
 ```
+
+where `ipfsHash` is the Inter Planetary File System hash where the DID document is uploaded in json form. For example;
+```
+{
+  "@context": "https://www.w3.org/ns/did/v1",
+  "id": "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7",
+  "controller": "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
+  "verificationMethod": [{
+    "id": "did:cardano:vkeyHash",
+    "type": "Ed25519VerificationKey2018",
+    "controller": "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7",
+    "publicKeyHex": "CBORHex"
+  }],
+  "authentication": [
+    "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
+  ],
+  "assertionMethod": [
+    "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
+  ]
+}
+```
+leads to an ipfs hash of `QmRyi81SHQsY3qB4eJDsVcxRhCVTe1CvP1JcBe1DYQjhjj`.
 
 This transaction must be signed by the signing key corresponding to the verification key associated with the Cardano DID.
 
