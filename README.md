@@ -91,7 +91,7 @@ where `ipfsHash` is the Inter Planetary File System hash where the DID document 
     "id": "did:cardano:vkeyHash",
     "type": "Ed25519VerificationKey2018",
     "controller": "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7",
-    "publicKeyHex": "CBORHex"
+    "publicKeyHex": "582025331c5333218a91b6bbebd765ac1666ce407358a09bae408973488533022c9d"
   }],
   "authentication": [
     "did:cardano:d167e80867ac557471f19763408029b8db1a4fc88656e544877c6bf7"
@@ -101,7 +101,7 @@ where `ipfsHash` is the Inter Planetary File System hash where the DID document 
   ]
 }
 ```
-leads to an ipfs hash of `QmRyi81SHQsY3qB4eJDsVcxRhCVTe1CvP1JcBe1DYQjhjj`.
+leads to an ipfs hash of `QmWqRpqq8d625UGHvR4WnfqQXU9HbCmW4Bsebgk7hifQ8m`.
 
 This transaction must be signed by the signing key corresponding to the verification key associated with the Cardano DID.
 
