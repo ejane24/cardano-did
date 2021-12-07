@@ -1,4 +1,4 @@
-# Cardano DID method
+# Cardano DID method (Draft)
 
 ## Introduction
 Cardano is a public blockchain platform. It is open-source and decentralized, with consensus achieved using proof of stake. It can facilitate peer-to-peer transactions with its internal cryptocurrency, Ada. Cardano DID method is a proposed implementation of DID for the Cardano Blockchain and provides a concrete specification for Cardano-specific DID. This method is valid for both the Cardano mainnet and testnet.
